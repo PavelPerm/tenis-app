@@ -6,5 +6,6 @@ export default DS.Model.extend({
   player1: DS.belongsTo('player'),
   player2: DS.belongsTo('player'),
   scoreP1: DS.attr('number'),
-  scoreP2: DS.attr('number')
+  scoreP2: DS.attr('number'),
+  games: DS.hasMany('game')
 });
