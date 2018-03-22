@@ -1,1 +1,17 @@
+<h3 class="ui center aligned header">Матч</h3>
+<div class="ui justified container">
+<form class="ui form">
+  <div class="fields">
+    <div class="twelve wide field">
+      <label>Название</label>
+      {{input type="text" title="Название" placeholder="Название матча" value=model.name}}
+    </div>
+    <div class="four wide field">
+      <label>Дата начала</label>
+      {{input type="date" title="Дата начала" placeholder="Дата" value=model.startDate}}
+    </div>
+  </div>
+  <h4 class="ui dividing header">Настройки матча</h4>
+</form>
+</div>
 {{outlet}}
