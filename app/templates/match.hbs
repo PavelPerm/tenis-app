@@ -11,7 +11,25 @@
       {{input type="date" title="Дата начала" placeholder="Дата" value=model.startDate}}
     </div>
   </div>
-  <h4 class="ui dividing header">Настройки матча</h4>
+  <h5 class="ui dividing header">Настройки матча</h5>
+  <div class="fields">
+    <div class="six wide field">
+      <label>Кол-во очков в партии</label>
+      <div class="ui action input">
+        {{input readonly=true type="number" title="Кол-во очков в партии" placeholder="Кол-во очков в партии" value=model.maxGameScore}}
+        <div class="ui buttons">
+        <button class="ui button" {{action "set11" }}>11</button><div class="or"></div><button class="ui button" {{action "set21" }}>21</button>
+        </div>
+      </div>
+    </div>
+    <div class="six wide field">
+      <label>Кол-во побед для выигрыша матча</label>
+      <div class="ui action input">
+        {{input type="number" title="Кол-во побед" placeholder="Кол-во побед для выигрыша матча" value=model.minGamesForWin}}
+      </div>
+    </div>
+  </div>
+
 </form>
 </div>
 {{outlet}}
