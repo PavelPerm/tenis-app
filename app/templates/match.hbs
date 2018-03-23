@@ -11,6 +11,15 @@
       {{input type="date" title="Дата начала" placeholder="Дата" value=model.startDate}}
     </div>
   </div>
+  <h5 class="ui dividing header">Игроки</h5>
+  <div class="two fields">
+    <div class="field">
+      {{player-select players=players id='select-p1' value=model.player1}}
+    </div>
+    <div class="field">
+      {{player-select players=players id='select-p2' value=model.player2}}
+    </div>
+  </div>
   <h5 class="ui dividing header">Настройки матча</h5>
   <div class="fields">
     <div class="six wide field">
@@ -29,7 +38,6 @@
       </div>
     </div>
   </div>
-
 </form>
 </div>
 {{outlet}}
