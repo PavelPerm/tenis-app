@@ -11,15 +11,6 @@
       {{input type="date" title="Дата начала" placeholder="Дата" value=model.startDate}}
     </div>
   </div>
-  <h5 class="ui dividing header">Игроки</h5>
-  <div class="two fields">
-    <div class="field">
-      {{player-select players=players id='select-p1' value=model.player1}}
-    </div>
-    <div class="field">
-      {{player-select players=players id='select-p2' value=model.player2}}
-    </div>
-  </div>
   <h5 class="ui dividing header" {{ action "toggleSettings" }} style="cursor: pointer; color: cornflowerblue">Настройки матча&nbsp;{{#if isExpanded }}<i class="angle up icon"></i>{{else}}<i class="angle down icon"></i>{{/if}}</h5>
   {{#if isExpanded }}
   <div class="fields">
@@ -40,6 +31,36 @@
     </div>
   </div>
   {{/if }}
+  <h5 class="ui dividing header">Игроки</h5>
+  <div class="two fields">
+    <div class="field">
+      {{player-select players=players id='select-p1' value=model.player1}}
+    </div>
+    <div class="field">
+      {{player-select players=players id='select-p2' value=model.player2}}
+    </div>
+  </div>
+  <h5 class="ui dividing header">Результаты партий</h5>
+  {{#each model.games as |g|}}
+  <div class="two fields">
+    <div style='font-size: 2em; font-weight: bold; padding-top: 10px'>{{ g.order }}</div>
+    <div class="field">
+      {{input type="number" placeholder='Кол-во очков Игрок1' value=g.scoreP1 }}
+    </div>
+    <div style='font-size: 2em; font-weight: bold; padding-top: 10px'>:</div>
+    <div class="field">
+      {{input type="number" placeholder='Кол-во очков Игрок2' value=g.scoreP2 }}
+    </div>
+  </div>
+  {{else}}
+    <p>нет сыгранных игр</p>
+  {{/each}}
+  <center>
+    <button class="ui labeled icon button" {{ action 'addOneGame' }}>
+      <i class="add icon"></i>
+      Добавить партию
+    </button>
+  </center>
 </form>
 </div>
 {{outlet}}

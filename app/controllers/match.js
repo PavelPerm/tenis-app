@@ -6,6 +6,12 @@ export default Ember.Controller.extend({
     this.set('players', this.get('store').peekAll('player'));
   },
   actions: {
+    addOneGame() {
+      var g = this.get('store').createRecord('game', {
+        order: this.get('model.games.length') + 1
+      });
+      this.model.get('games').pushObject(g);
+    },
     toggleSettings() {
       this.toggleProperty('isExpanded');
     },
