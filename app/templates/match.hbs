@@ -20,7 +20,8 @@
       {{player-select players=players id='select-p2' value=model.player2}}
     </div>
   </div>
-  <h5 class="ui dividing header">Настройки матча</h5>
+  <h5 class="ui dividing header" {{ action "toggleSettings" }} style="cursor: pointer; color: cornflowerblue">Настройки матча&nbsp;{{#if isExpanded }}<i class="angle up icon"></i>{{else}}<i class="angle down icon"></i>{{/if}}</h5>
+  {{#if isExpanded }}
   <div class="fields">
     <div class="six wide field">
       <label>Кол-во очков в партии</label>
@@ -38,6 +39,7 @@
       </div>
     </div>
   </div>
+  {{/if }}
 </form>
 </div>
 {{outlet}}
