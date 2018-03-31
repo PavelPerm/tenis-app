@@ -1,4 +1,4 @@
-<select {{action "onSelectPlayer" on="change" }} id="{{id}}">
+<select {{action "onSelectPlayer" on="change" }}>
   <option value="">выберите игрока</option>
   {{#each players as |p|}}
     <option value="{{ p.id }}">{{ concat p.lastName ", " p.firstName }}</option>
