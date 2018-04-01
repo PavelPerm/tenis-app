@@ -1,0 +1,9 @@
+{
+  "extends": "ember",
+  "rules": {
+    "linebreak-style": "off",
+    "brace-style": ["warn", {
+       "allowSingleLine": true
+    }]
+  }
+}
