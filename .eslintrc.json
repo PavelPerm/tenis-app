@@ -2,8 +2,9 @@
   "extends": "ember",
   "rules": {
     "linebreak-style": "off",
-    "brace-style": ["warn", {
+    "brace-style": ["error", "1tbs", {
        "allowSingleLine": true
-    }]
+    }],
+    "object-curly-spacing": ["error", "always"]
   }
 }
