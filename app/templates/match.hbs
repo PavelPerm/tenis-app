@@ -45,22 +45,7 @@
   </div>
   <h5 class="ui dividing header">Результаты партий</h5>
   {{#each model.games as |g|}}
-  <div class="two fields">
-    <div style='font-size: 2em; font-weight: bold; padding-top: 10px'>{{ g.order }}</div>
-    <div class="field">
-      {{input type="number" placeholder='Кол-во очков Игрок1' value=g.scoreP1 focus-out=(action (mut showScoreP1error) true) }}
-      {{#if showScoreP1error}}
-      <div class="error">{{v-get g 'scoreP1' 'message' }}</div>
-      {{/if}}
-    </div>
-    <div style='font-size: 2em; font-weight: bold; padding-top: 10px'>:</div>
-    <div class="field">
-      {{input type="number" placeholder='Кол-во очков Игрок2' value=g.scoreP2 focus-out=(action (mut showScoreP2error) true)}}
-      {{#if showScoreP2error}}
-      <div class="error">{{v-get g 'scoreP2' 'message' }}</div>
-      {{/if}}
-    </div>
-  </div>
+    {{game-details game=g maxScore=model.maxGameScore}}
   {{else}}
     <p>нет сыгранных игр</p>
   {{/each}}

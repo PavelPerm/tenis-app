@@ -1,0 +1,17 @@
+  <div class="two fields">
+    <div style='font-size: 2em; font-weight: bold; padding-top: 10px'>{{ game.order }}</div>
+    <div class="field">
+      {{input type="number" placeholder='Кол-во очков Игрок1' value=game.scoreP1 focus-out=(action (mut showScoreP1error) true) }}
+      {{#if showScoreP1error}}
+      <div class="error">{{v-get game 'scoreP1' 'message' }}</div>
+      {{/if}}
+    </div>
+    <div style='font-size: 2em; font-weight: bold; padding-top: 10px'>:</div>
+    <div class="field">
+      {{input type="number" placeholder='Кол-во очков Игрок2' value=game.scoreP2 focus-out=(action (mut showScoreP2error) true)}}
+      {{#if showScoreP2error}}
+      <div class="error">{{v-get game 'scoreP2' 'message' }}</div>
+      {{/if}}
+    </div>
+  </div>
+{{yield}}
