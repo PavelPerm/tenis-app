@@ -43,6 +43,14 @@
       {{player-select players=players value=model.player2}}
     </div>
   </div>
+  <div class="two fields">
+    <div class="field">
+      <strong>Рейтинг:</strong>&nbsp;{{model.player1.rating}}
+    </div>
+    <div class="field">
+      <strong>Рейтинг:</strong>&nbsp;{{model.player2.rating}}
+    </div>
+  </div>
   <h5 class="ui dividing header">Результаты партий</h5>
   {{#each model.games as |g|}}
     {{game-details game=g maxScore=model.maxGameScore}}

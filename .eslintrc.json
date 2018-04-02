@@ -5,6 +5,7 @@
     "brace-style": ["error", "1tbs", {
        "allowSingleLine": true
     }],
-    "object-curly-spacing": ["error", "always"]
+    "object-curly-spacing": ["error", "always"],
+    "no-magic-numbers": "off"
   }
 }
